@@ -1,0 +1,354 @@
+:root {
+  /* Midnight Palette from Colors.ts */
+  --bg-color: #121212;
+  /* midnight */
+  --surface-color: #1E1E1E;
+  /* midnightCard */
+  --primary-color: #FFD25F;
+  /* primaryAmber */
+  --primary-dim: #BFA04A;
+  /* primaryDim */
+  --text-color: #E6E6E6;
+  /* textBright */
+  --text-dim: #9CA3AF;
+  /* textDim */
+  --accent-color: #9FA8DA;
+  /* accent (Lavender) */
+  --glass-bg: rgba(30, 30, 30, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  /* glassBorder */
+  --tint-surface: rgba(255, 210, 95, 0.08);
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(18, 18, 18, 0.95);
+  /* High opacity midnight */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* This ensures vertical alignment */
+  height: 50px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  /* Crucial for aligning text links with the button */
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links .btn-primary {
+  /* Reset link styles for the button to have its own flow */
+  color: #121212;
+  /* Dark text on amber button */
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #E8B940);
+  color: #121212;
+  /* Dark text for contrast */
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  display: inline-flex;
+  /* Better for centering content including icons */
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 210, 95, 0.15);
+  background: linear-gradient(135deg, #E8B940, var(--primary-color));
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+/* Ambient glow */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 210, 95, 0.08) 0%, rgba(18, 18, 18, 0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 60px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.hero h1 span {
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+  max-width: 580px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.mockup {
+  width: 280px;
+  height: 580px;
+  background: #000;
+  border-radius: 40px;
+  border: 6px solid #2e2e2e;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.mockup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Features Section */
+.features {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.section-title p {
+  color: var(--text-dim);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: var(--surface-color);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tint effect */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--tint-surface);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 210, 95, 0.3);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 210, 95, 0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--primary-color);
+  font-size: 22px;
+}
+
+.feature-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer */
+footer {
+  padding: 60px 0 30px;
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+  background: #0f172a;
+  /* charcoalDark */
+}
+
+.footer-links {
+  margin-bottom: 30px;
+}
+
+.footer-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  margin: 0 16px;
+  transition: color 0.2s;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.copyright {
+  color: #555;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    /* allow wrapping on very small screens */
+  }
+
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 60px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .mockup {
+    width: 250px;
+    height: 500px;
+  }
+}

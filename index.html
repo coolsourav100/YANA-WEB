@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YANA - Your AI Navigator Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PWA settings -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#121212">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="assets/icon.png">
+    <link rel="icon" type="image/png" href="assets/icon.png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <img src="assets/icon.png" alt="YANA Logo">
+                    YANA
+                </a>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="#" class="btn-primary">Download App</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container" style="display: flex; align-items: center; width: 100%;">
+            <div class="hero-content">
+                <h1>Discover the World with AI Intelligence</h1>
+                <p>YANA creates personalized travel itineraries, finds hidden gems, and guides you through your journey
+                    with real-time assistance. Experience travel like never before.</p>
+                <a href="#" class="btn-primary"><i class="fab fa-android"></i> Download for Android</a>
+            </div>
+            <div class="hero-image">
+                <div class="mockup">
+                    <img src="assets/splash.png" alt="App Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose YANA?</h2>
+                <p>Advanced features designed for the modern traveler</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI Powered Planning</h3>
+                    <p>Our intelligent algorithms analyze your preferences to build the perfect day-by-day itinerary for
+                        any destination.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>Smart Discovery</h3>
+                    <p>Find local attractions, hidden spots, and best-rated restaurants that match your unique travel
+                        style.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-wifi"></i></div>
+                    <h3>Offline Capable</h3>
+                    <p>Access your itineraries and saved locations even when you're off the grid. Perfect for
+                        international travel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#features">Features</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="mailto:support@yana-travel.com">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2026 YANA Travel. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
+</body>
+
+</html>

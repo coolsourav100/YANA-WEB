@@ -1,0 +1,21 @@
+{
+    "name": "YANA - Travel Assistant",
+    "short_name": "YANA",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#121212",
+    "theme_color": "#121212",
+    "description": "Your AI Navigator Assistant for personalized travel planning.",
+    "icons": [
+        {
+            "src": "assets/icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
